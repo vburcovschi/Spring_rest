@@ -42,4 +42,10 @@ public class MyRestController {
         employeeService.saveEmployee(employee);
         return employee;
     }
+
+    @DeleteMapping("/employees/{id}")
+    public String deleteEmployee(@PathVariable int id){
+        employeeService.removeEmployee(id);
+        return "Employee with id= "+id+" was deleted";
+    }
 }
